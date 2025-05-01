@@ -128,12 +128,12 @@ summarizer = nlp_model["summarizer"]
 paraphraser = nlp_model["paraphraser"]
 
 
-# Function to generate a dynamic report using NLP pipeline
+# Generate a dynamic report using NLP pipeline
 def generate_report(result):
     report = feature_based_reports.get(result, None)
 
     if report:
-        feature_text = ", ".join(report["features"])  # Maintain predefined features
+        feature_text = ", ".join(report["features"])  
 
         # Generate base report with original psychological meaning
         generated_text = report["base_report"].format(features=feature_text)
