@@ -165,20 +165,17 @@ def generate_pdf(report_text, image_path):
     pdf.set_auto_page_break(auto=True, margin=15)
     pdf.add_page()
 
-    # Add title
     pdf.set_font("Arial", style="B", size=16)
     pdf.cell(200, 10, "Psychological Analysis Report", ln=True, align="C")
-    pdf.ln(10)  # Line break
+    pdf.ln(10)
 
-    # Load image and calculate dynamic size
     try:
         img = Image.open(image_path)
         img_width, img_height = img.size
 
-        # Convert image dimensions to PDF scale (A4 width: 210mm, height: 297mm)
-        max_width = 120  # Max image width in mm
+        max_width = 120  
         aspect_ratio = img_height / img_width
-        scaled_height = max_width * aspect_ratio  # Maintain aspect ratio
+        scaled_height = max_width * aspect_ratio  
 
         # Calculate center position (A4 width is 210mm)
         x_center = (210 - max_width) / 2  # Center horizontally
