@@ -113,7 +113,7 @@ def save_canvas_image(image_array):
     image.save(IMAGE_PATH)
     return IMAGE_PATH
 
-# NLP models loading
+# NLP models pipeline
 @st.cache_resource
 def load_nlp_models():
     return {
