@@ -98,7 +98,7 @@ if selected == "Overview":
 
 
 
-# Saving canvas image
+# Canvas Image Saving Function
 def save_canvas_image(image_array):
     """
     Convert the canvas drawing to an RGB image with a white background and black strokes.
@@ -113,7 +113,7 @@ def save_canvas_image(image_array):
     image.save(IMAGE_PATH)
     return IMAGE_PATH
 
-
+# NLP models loading
 @st.cache_resource
 def load_nlp_models():
     return {
