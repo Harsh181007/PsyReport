@@ -177,35 +177,26 @@ def generate_pdf(report_text, image_path):
         aspect_ratio = img_height / img_width
         scaled_height = max_width * aspect_ratio  
 
-        # Calculate center position (A4 width is 210mm)
-        x_center = (210 - max_width) / 2  # Center horizontally
-        y_position = 40  # Fixed top position
+        x_center = (210 - max_width) / 2  
+        y_position = 40  
 
-        # Draw border around image
-        border_padding = 5  # Padding for the border
-        pdf.set_draw_color(0, 0, 0)  # Black border
+        border_padding = 5  
+        pdf.set_draw_color(0, 0, 0)  
         pdf.rect(x_center - border_padding, y_position - border_padding, max_width + 2 * border_padding, scaled_height + 2 * border_padding)
 
-        # Add image
         pdf.image(image_path, x=x_center, y=y_position, w=max_width)
 
-        # Move text below the image with spacing
-        y_text = y_position + scaled_height + 20  # Add gap after image
+        y_text = y_position + scaled_height + 20  
         pdf.set_y(y_text)
     except Exception as e:
         print(f"Error loading image: {e}")
 
-    # Normalize text to avoid encoding issues
     report_text = normalize_text(report_text)
 
-    # Add report text
     pdf.set_font("Arial", size=12)
     pdf.multi_cell(0, 10, report_text)
 
-    # Generate PDF as a byte string
-    pdf_bytes = pdf.output(dest="S")  # No need to encode
-
-    # Convert to BytesIO object
+    pdf_bytes = pdf.output(dest="S")
     pdf_buffer = io.BytesIO(pdf_bytes)
 
     return pdf_buffer
