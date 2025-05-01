@@ -16,11 +16,11 @@ import unicodedata
 
 
 
-# Sidebar with logo and navigation menu
+# Sidebar
 with st.sidebar:
     st.image('images/logo.png', width=250)
     
-    # Option menu for selecting prediction models
+    # Bootstrap icons
     selected = option_menu(
         'PsyReport',
         ['Overview', 'House Drawing Test', 'Tree Drawing Test', 'Person Drawing Test','Color Drawing Test'],
