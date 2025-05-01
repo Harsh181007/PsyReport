@@ -6,7 +6,7 @@ import torch
 from PIL import Image
 from torch.utils.data import Dataset
 
-# This file is important to load models that are trained on the doodle dataset
+# This file is important to load models
 class DoodleDatasetSimple(Dataset):
     """
     Class that prepares the dataset for loading
