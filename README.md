@@ -1,4 +1,4 @@
-NO # 🧠 **PsyReport: AI-Powered Psychological Insights from Children's Drawings**
+O # 🧠 **PsyReport: AI-Powered Psychological Insights from Children's Drawings**
 
 > ✏️ *“Sometimes, a child's drawing speaks louder than words.”*
 
